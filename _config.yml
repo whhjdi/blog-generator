@@ -82,3 +82,8 @@ deploy:
   type: git
   repo: https://github.com/whhjdi/whhjdi.github.io.git
   branch: master
+
+leancloud_visitors:
+  enable: true
+  app_id: wWmiz40M8KaM8dalyJuJ2hK5-gzGzoHsz
+  app_key: MX6crkYYCU4pgYMdFtgzufFX

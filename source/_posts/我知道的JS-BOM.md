@@ -6,7 +6,33 @@ tags: [JavaScript]
 
 # BOM
 
-BOM(Browser Object Model) 是指浏览器对象模型，是用于描述这种对象与对象之间层次关系的模型，浏览器对象模型提供了独立于内容的、可以与浏览器窗口进行互动的对象结构。BOM 由多个对象组成，其中代表浏览器窗口的 Window 对象是 BOM 的顶层对象，其他对象都是该对象的子对象。
+BOM（浏览器对象模型）是浏览器本身的一些信息的设置和获取，例如获取浏览器的宽度、高度，设置让浏览器跳转到哪个地址
+
+1、navigator
+2、 screen
+3、location
+4、history
+获取浏览器特性（即俗称的 UA）然后识别客户端，例如判断是不是 Chrome 浏览器
+
+var ua = navigator.userAgent
+var isChrome = ua.indexOf('Chrome')
+console.log(isChrome)
+获取屏幕的宽度和高度
+
+console.log(screen.width)
+console.log(screen.height)
+获取网址、协议、path、参数、hash 等
+console.log(location.href)
+console.log(location.protocol)
+console.log(location.pathname)
+console.log(location.search)
+console.log(location.hash)
+另外，还有调用浏览器的前进、后退功能等
+
+history.back()
+history.forward()
+
+<!--more-->
 
 ## 浏览器的组成
 
@@ -32,7 +58,7 @@ Edge: EdgeHTML 引擎
 优化
 使用 translate 替代 top
 使用 visibility 替换 display: none ，因为前者只会引起重绘，后者会引发回流（改变了布局）
-把 DOM 离线后修改，比如：先把 DOM 给 display:none (有一次 Reflow)，然后你修改100次，然后再把它显示出来
+把 DOM 离线后修改，比如：先把 DOM 给 display:none (有一次 Reflow)，然后你修改 100 次，然后再把它显示出来
 不要把 DOM 结点的属性值放在一个循环里当成循环里的变量
 不要一项一项地改变样式，而是使用 CSS class 一次性改变样式。
 不要使用 table 布局，可能很小的一个小改动会造成整个 table 的重新布局
@@ -44,8 +70,6 @@ Edge: EdgeHTML 引擎
 ## window
 
 BOM 的核心是 window 对象，它表示浏览器的一个实例。在浏览器中，即是 javascript 访问浏览器窗口的一个接口，又是 ECMAScript 规定的 Global 对象，这就意味着在网页中定义的任意变量、函数、对象都是以 window 作为 Global 对象。
-
-<!--more-->
 
 所有在全局作用域中声明的变量、函数、对象都会作为 window 的属性和方法
 

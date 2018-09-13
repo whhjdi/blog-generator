@@ -148,6 +148,8 @@ touchstart touchmove touchend touchcancel
 
 优点：
 可以监听动态生成的元素，省监听器，节省内存
+event.currentTaget 始终是监听事件者
+event.target 而 target 是事件的真正触发者
 
 ```html
 <ul id="ul">

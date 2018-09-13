@@ -1,6 +1,6 @@
 ---
 title: vue-router
-date: 2018-09-12 16:18:56
+date: 2018-08-06 16:18:56
 tags: [vue-router]
 ---
 
