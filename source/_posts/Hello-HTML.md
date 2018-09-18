@@ -13,6 +13,8 @@ tags: [HTML]
 再后来,有了专门的前端程序员,他们清楚的知道每个标签的用法,不再是全用 div 标签了,会尽量使用 h1, ul, ol, p, header,nav 等
 语义化可以让页面具有良好的结构与含义,可以有效的提高代码可读性和可检索性
 
+<!--more-->
+
 ## HTML5 的新特性
 
 新的语义化元素：article 、footer 、header 、nav 、section

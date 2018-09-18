@@ -9,7 +9,7 @@ tags: [JavaScript]
 BOM（浏览器对象模型）是浏览器本身的一些信息的设置和获取，例如获取浏览器的宽度、高度，设置让浏览器跳转到哪个地址
 
 1、navigator
-2、 screen
+2、screen
 3、location
 4、history
 获取浏览器特性（即俗称的 UA）然后识别客户端，例如判断是不是 Chrome 浏览器
@@ -17,6 +17,9 @@ BOM（浏览器对象模型）是浏览器本身的一些信息的设置和获�
 var ua = navigator.userAgent
 var isChrome = ua.indexOf('Chrome')
 console.log(isChrome)
+
+<!--more-->
+
 获取屏幕的宽度和高度
 
 console.log(screen.width)
@@ -31,8 +34,6 @@ console.log(location.hash)
 
 history.back()
 history.forward()
-
-<!--more-->
 
 ## 浏览器的组成
 

@@ -4,11 +4,9 @@ date: 2018-07-23 09:58:41
 tags: [vue,组件通信]
 ---
 
-# Vue
+# 组件通信
 
-## 组件通信
-
-### 父子组件通信
+## 父子组件通信
 
 子组件向父组件传递数据（查看 [demo](http://jsbin.com/wijofehuge/edit?html,css,js,output)）
 
@@ -16,22 +14,22 @@ tags: [vue,组件通信]
 
 <!--more-->
 
-### 非父子组件通信
+## 非父子组件通信
 
 [查看 demo](http://jsbin.com/motorofiri/edit?html,js,output)
 
 ```javascript
-创建一个空的vue实例,作为bus
-触发组件A中的事件
+// 创建一个空的vue实例,作为bus
+// 触发组件A中的事件
 
 bus.$emit('event,1)
-在组件B中的钩子函数中监听事件
+//在组件B中的钩子函数中监听事件
 
 bus.$on('event',function(){
     // ......
 })
-子组件通过`this.$parent可以修改父组件的数据
-父组件通过this.$refs.xxx.数据,可以获取到自组件中的内容(给子组件添加索引ref=”xxx”)
+// *子组件通过`this.$parent可以修改父组件的数据
+// 父组件通过this.$refs.xxx.数据,可以获取到自组件中的内容(给子组件添加索引ref=”xxx”)
 ```
 
 ## vue 中 keep-alive 组件的作用

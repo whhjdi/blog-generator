@@ -18,6 +18,8 @@ map 遍历原数组，处理每个元素，返回一个新数组
 //  parseInt('3', 2) -> NaN
 ```
 
+<!--more-->
+
 flatMap
 
 ```javascript
