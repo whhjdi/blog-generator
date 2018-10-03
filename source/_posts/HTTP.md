@@ -160,10 +160,10 @@ LocalStorage永久有效，除非用户手动清除
 ## SessionStorage
 
 ```javascript
-AessionStorage和HTTP无关
-HTTP不会带上AessionStorage的值
-只有相同域名的页面才能相互读取 AessionStorage
-每个域名AessionStorage 存储量是有限的
+SessionStorage和HTTP无关
+HTTP不会带上SessionStorage的值
+只有相同域名的页面才能相互读取 SessionStorage
+每个域名SessionStorage 存储量是有限的
 常用来记录有没有提示过用户
 关闭浏览器后就失效
 ```

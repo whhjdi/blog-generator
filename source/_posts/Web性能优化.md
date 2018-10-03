@@ -7,6 +7,7 @@ tags: [性能]
 # Web 性能优化
 
 想要进行优化必须先要了解一个页面从加载到展现的过程中经历了那些过程
+找到一篇[好文章](https://github.com/wy-ei/notebook/issues/34)
 
 ## 从输入 URL 到页面展现中间发生了什么？
 
