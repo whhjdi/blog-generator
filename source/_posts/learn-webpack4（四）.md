@@ -1,6 +1,6 @@
 ---
 title: learn-webpack4（四）
-date: 2018-10-21 16:19:21
+date: 2018-10-12 16:19:21
 tags: [webpack]
 ---
 
@@ -97,7 +97,7 @@ module.exports = {
 
 ### 打包后以 link 形式引入
 
-只需要 fill-loading 来处理即可
+只需要 fill- 来处理即可
 
 ```javascript
 let clicked = false;
@@ -112,11 +112,11 @@ window.addEventListener("click", function() {
 app.js 写如上代码，点击即可看到以 link 形式引入了 css
 
 ### 打包后将css放到style里
-style.loading处理为单个style标签
-css-loading做代码压缩
+style.loader处理为单个style标签
+css-loader做代码压缩
 
 ###动态卸载和加载css
-通过style-loading提供的use()和unuse()方法实现
+通过style-loader提供的use()和unuse()方法实现
 修改app.js实现每0.5s换一次背景颜色
 ```javascript
 import base from "./css/base.css"; // import cssObj from '...'
@@ -149,7 +149,7 @@ import base from "./css/base.css";
 
 ## 打包scss
 
-首先需要用到node-sass,sass-loading等加载器
+首先需要用到node-sass,sass-loader等加载器
 ```javascript
 {
   "devDependencies": {
@@ -163,4 +163,4 @@ import base from "./css/base.css";
 }
 ```
 ### 思路
-首先使用sass-loading把scss编译成css,然后再按照用css的相关loading处理，注意放在最后的loading首先被执行
+首先使用sass-loader把scss编译成css,然后再按照用css的相关loader处理，注意放在最后的loader首先被执行
