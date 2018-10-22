@@ -23,6 +23,8 @@ $ xcode-select --install
 brew install coreutils vim node git wget
 ```
 
+<!--more-->
+
 ## git 和 github
 
 ### github 配置
