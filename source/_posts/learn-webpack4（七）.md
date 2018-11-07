@@ -10,6 +10,8 @@ tags: [webpack]
 图片压缩 (img-loader)
 合成雪碧图 (postcss-loader,postcss-sprites)
 
+<!--more-->
+
 ## base64 编码和图片压缩
 
 ```javascript
@@ -93,7 +95,9 @@ module.exports = {
 ```
 
 ## 雪碧图合成
+
 根据文档加入相应的配置即可
+
 ```javascript
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");

@@ -12,9 +12,10 @@ tags: [webpack]
 3，动态卸载和加载 css
 4, 先加载 css.transform
 
-## 打包css
+## 打包 css
 
 ### webpack 配置
+
 ```javascript
 {
   "devDependencies": {
@@ -24,6 +25,9 @@ tags: [webpack]
   }
 }
 ```
+
+<!--more-->
+
 4 种配置方案，只有 use 部分不同，我就写一起了
 
 ```javascript
@@ -111,13 +115,15 @@ window.addEventListener("click", function() {
 
 app.js 写如上代码，点击即可看到以 link 形式引入了 css
 
-### 打包后将css放到style里
-style.loader处理为单个style标签
-css-loader做代码压缩
+### 打包后将 css 放到 style 里
 
-###动态卸载和加载css
-通过style-loader提供的use()和unuse()方法实现
-修改app.js实现每0.5s换一次背景颜色
+style.loader 处理为单个 style 标签
+css-loader 做代码压缩
+
+###动态卸载和加载 css
+通过 style-loader 提供的 use()和 unuse()方法实现
+修改 app.js 实现每 0.5s 换一次背景颜色
+
 ```javascript
 import base from "./css/base.css"; // import cssObj from '...'
 var flag = false;
@@ -131,25 +137,32 @@ setInterval(function() {
   flag = !flag;
 }, 500);
 ```
-### 加载css前更改样式
-通过options.transform实现
-写一个css.transform.js
+
+### 加载 css 前更改样式
+
+通过 options.transform 实现
+写一个 css.transform.js
+
 ```javascript
 module.exports = function(css) {
   console.log(css); // 查看css
   return window.innerWidth < 1000 ? css.replace("red", "green") : css; // 如果屏幕宽度 < 1000, 替换背景颜色
 };
 ```
-在app.js 中引入css文件
+
+在 app.js 中引入 css 文件
+
 ```javascript
 import base from "./css/base.css";
 ```
+
 如果打开网页时宽度<1000,那么背景颜色就是绿色，否则就是灰色
 但是并不是响应式的
 
-## 打包scss
+## 打包 scss
 
-首先需要用到node-sass,sass-loader等加载器
+首先需要用到 node-sass,sass-loader 等加载器
+
 ```javascript
 {
   "devDependencies": {
@@ -162,5 +175,7 @@ import base from "./css/base.css";
   }
 }
 ```
+
 ### 思路
-首先使用sass-loader把scss编译成css,然后再按照用css的相关loader处理，注意放在最后的loader首先被执行
+
+首先使用 sass-loader 把 scss 编译成 css,然后再按照用 css 的相关 loader 处理，注意放在最后的 loader 首先被执行

@@ -20,15 +20,21 @@ tags: [webpack]
   }
 }
 ```
-需要提取css到一个单独的文件，所以需要ExtractTextPlugin
-在app.js需要引入style-loader和css-loader
+
+需要提取 css 到一个单独的文件，所以需要 ExtractTextPlugin
+在 app.js 需要引入 style-loader 和 css-loader
+
+<!--more-->
+
 ```javascript
 import "style-loader/lib/addStyles";
 import "css-loader/lib/css-base";
 
 import "./assets/fonts/iconfont.css";
 ```
-## webpack配置
+
+## webpack 配置
+
 ```javascript
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -82,4 +88,5 @@ module.exports = {
   plugins: [extractTextPlugin]
 };
 ```
+
 打包后会按照你的配置在、dist/fonts/目录下生成打包好的文件

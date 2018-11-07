@@ -3,14 +3,20 @@ title: learn-webpack4（二）
 date: 2018-10-10 12:44:06
 tags: [webpack]
 ---
-# 多页面解决方案
-对于webpack4提取公共代码需要用到optimization.splitChunks配置
-## 提取公共代码
-pageA和pageB俩个入口文件，都引入了subPageA,subPageB和lodash。
-俩个sub文件又都引入了module.js
-具体代码看demo
 
-## webpack配置
+# 多页面解决方案
+
+对于 webpack4 提取公共代码需要用到 optimization.splitChunks 配置
+
+## 提取公共代码
+
+pageA 和 pageB 俩个入口文件，都引入了 subPageA,subPageB 和 lodash。
+俩个 sub 文件又都引入了 module.js
+具体代码看 demo
+
+<!--more-->
+
+## webpack 配置
 
 ```json
 {
@@ -34,6 +40,7 @@ pageA和pageB俩个入口文件，都引入了subPageA,subPageB和lodash。
   "description": ""
 }
 ```
+
 ```javascript
 const webpack = require("webpack");
 const path = require("path");
@@ -72,7 +79,9 @@ module.exports = {
   }
 };
 ```
-npm start打包之后，在dist目录生成了4个文件，然后在html中引入
+
+npm start 打包之后，在 dist 目录生成了 4 个文件，然后在 html 中引入
+
 ```javascript
   <script src="./dist/common.chunk.js"></script>
   <script src="./dist/vendor.chunk.js"></script>

@@ -10,6 +10,8 @@ tags: [webpack]
 
 只需要配置 mode 为"production"，即可显式激活 UglifyjsWebpackPlugin 插件。现在默认就是激活的，不配置 mode 也可以
 
+<!--more-->
+
 ## JS Tree Shaking
 
 不需要安装其他依赖，package，json 都不需要配置
@@ -34,15 +36,15 @@ module.exports = {
 
 ## 第三方库的 Tree Shaking
 
-由于它是依赖es6的模块系统，所以使用的第三方库要使用对应的模块系统版本
-比如lodash不是es6的写法，就需要安装lodash-es
+由于它是依赖 es6 的模块系统，所以使用的第三方库要使用对应的模块系统版本
+比如 lodash 不是 es6 的写法，就需要安装 lodash-es
 
 就这样 啦啦啦
 
 ## CSS Tree Shaking
 
-实现css的tree shaking需要用到 purifycss和glod-all
-配置一下webpack
+实现 css 的 tree shaking 需要用到 purifycss 和 glod-all
+配置一下 webpack
 
 ```javascript
 const path = require("path");
@@ -97,4 +99,5 @@ module.exports = {
   plugins: [extractTextPlugin, purifyCSS]
 };
 ```
+
 具体例子就不写了，偷个懒

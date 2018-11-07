@@ -11,6 +11,8 @@ tags: [webpack]
 基本的东西和上个 scss 的 demo 一样
 不同的是需要用到使用 ExtractTextPlugin
 
+<!--more-->
+
 ```javascript
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -84,4 +86,5 @@ window.addEventListener("click", function() {
   }
 });
 ```
+
 我们需要在 html 代码中引入打包结果中的、非懒加载的样式(/dist/app.min.css)和 js 文件(/dist/app.bundle.js)。

@@ -23,6 +23,8 @@ npm install --save-dev webpack-cli
 首先需要了解 webpack 支持三种模块化的写法,包括 ES6,CommonJS,AMD
 先创建一个文件夹 vendor，分别用上边三种写法写三个 js 文件（sum.js,minus.js,multi.js）,代码如下
 
+<!--more-->
+
 ```javascript
 //sum.js(ES6)
 export default function(a, b) {

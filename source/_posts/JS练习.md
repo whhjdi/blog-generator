@@ -1,7 +1,7 @@
 ---
 title: JS练习
 date: 2018-08-20 20:58:51
-tags:
+tags: [JavaScript]
 ---
 
 > 练习 js,看看自己掌握的如何,思路可以有很多,有些真的很难想到,amazing

@@ -15,6 +15,8 @@ tags: [webpack]
 package.json 和上个 demo 一样
 webpack 配置如下
 
+<!--more-->
+
 ```javascript
 const webpack = require("webpack");
 const path = require("path");
@@ -51,7 +53,7 @@ import(/* webpackChunkName: 'lodash'*/ "lodash").then(function(_) {
 export default "page";
 ```
 
-require.ensure()不会自动执行js代码
+require.ensure()不会自动执行 js 代码
 
 ```javascript
 require.ensure(

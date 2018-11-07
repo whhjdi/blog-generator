@@ -1,7 +1,7 @@
 ---
 title: learn-webpack4（九）
 date: 2018-10-18 17:11:13
-tags: [javascript]
+tags: [webpack]
 ---
 
 # 处理第三方 JS 库&&自动生成 html
@@ -11,6 +11,8 @@ tags: [javascript]
 1.CDN：`<script></script>`标签引入即可
 2.npm 包管理： 目前最常用和最推荐的方法 3.本地 js 文件：一些库由于历史原因，没有提供 es6 版本，需要手动下载，放入项目目录中，再手动引入。
 针对第三种方法，如果没有 webpack，则需要手动引入 import 或者 require 来加载文件；但是，webpack 提供了 alias 的配置，配合 webpack.ProvidePlugin 这款插件，可以跳过手动入，直接使用！
+
+<!--more-->
 
 ### webpack 配置
 
@@ -58,7 +60,7 @@ export function sum(a, b) {
   return a + b;
 }
 //app.js
-import sum from "./vendor.sum.js" 
+import sum from "./vendor.sum.js";
 console.log("1 + 2 =", sum(1, 2));
 ```
 
@@ -95,7 +97,7 @@ module.exports = {
             loader: "html-loader"
           }
         ]
-      },
+      }
     ]
   },
   plugins: [

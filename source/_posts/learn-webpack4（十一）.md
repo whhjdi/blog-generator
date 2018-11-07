@@ -27,6 +27,8 @@ tags: [webpack]
   }
 ```
 
+<!--more-->
+
 安装完之后，运行 npm run dev 就可以启动开发模式,开发模式打包的内容暂时储存在内存中
 
 ## wbepack 配置
@@ -127,7 +129,9 @@ historyApiFallback: {
   rewrites: [{ from: /.*/, to: "/index.html" }];
 }
 ```
+
 ## 入口文件
+
 ```javascript
 import sum from "./vendor/sum";
 console.log("sum(1, 2) = ", sum(1, 2));
@@ -157,4 +161,5 @@ if (module.hot) {
   });
 }
 ```
-npm run dev就可以看到结果了，由于开启了source-map，所以可以定位代码位置。由于开起了热重载，当我们改变了sum.js就会自动执行编译
+
+npm run dev 就可以看到结果了，由于开启了 source-map，所以可以定位代码位置。由于开起了热重载，当我们改变了 sum.js 就会自动执行编译

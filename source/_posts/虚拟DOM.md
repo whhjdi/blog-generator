@@ -74,3 +74,19 @@ patchElement(root, vNodes1);
 ```
 
 实际的 diff 算法要复杂的多，我只是简单理解一下虚拟 DOM
+
+## react 中的虚拟 DOM
+
+1. state 数据
+2. JSX 模板
+3. 生成虚拟 DOM `['div,{id='abc'},['span',{},'hello']]`
+4. 用虚拟 DOM 的结构生成真实 DOM 来显示
+5. state 发生变化
+6. 生成新的虚拟 DOM `['div,{id='abc'},['span',{},'bye']]`
+7. 比较原始虚拟 DOM 和新的虚拟 DOM 的区别
+8. 直接操作 DOM,改变 span 中的内容
+
+### 优点
+
+1. 提升性能
+2. 使跨端应用得以实现
