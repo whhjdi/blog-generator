@@ -2,6 +2,7 @@
 title: TypeScript学习笔记（二）
 date: 2018-10-02 21:50:20
 tags: [TypeScript]
+categories: ["Typescript"]
 ---
 
 # TypeScript

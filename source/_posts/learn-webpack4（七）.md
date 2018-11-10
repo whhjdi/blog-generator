@@ -2,6 +2,7 @@
 title: learn-webpack4（七）
 date: 2018-10-16 12:19:10
 tags: [webpack]
+categories: ["wbepack"]
 ---
 
 # 图片处理

@@ -2,6 +2,7 @@
 title: Hello World
 date: 2018-03-01 15:47:45
 tags: [其他]
+categories: ["其他"]
 ---
 
 # 记录

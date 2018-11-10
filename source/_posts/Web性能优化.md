@@ -2,6 +2,7 @@
 title: Web性能优化
 date: 2018-06-01 21:42:17
 tags: [性能]
+categories: ["其他"]
 ---
 
 # Web 性能优化

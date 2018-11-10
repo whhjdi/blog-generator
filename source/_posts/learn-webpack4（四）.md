@@ -2,6 +2,7 @@
 title: learn-webpack4（四）
 date: 2018-10-12 16:19:21
 tags: [webpack]
+categories: ["wbepack"]
 ---
 
 # 打包 css/scss

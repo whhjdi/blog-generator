@@ -2,6 +2,7 @@
 title: AJAX
 date: 2018-07-20 18:22:02
 tags: [AJAX]
+categories: ["其他"]
 ---
 
 # AJAX

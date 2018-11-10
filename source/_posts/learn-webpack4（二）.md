@@ -2,6 +2,7 @@
 title: learn-webpack4（二）
 date: 2018-10-10 12:44:06
 tags: [webpack]
+categories: ["wbepack"]
 ---
 
 # 多页面解决方案

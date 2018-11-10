@@ -1,7 +1,8 @@
 ---
 title: MVC与单向绑定和双向绑定
 date: 2018-08-12 20:38:04
-? tags
+tags: [MVC]
+categories: ["其他"]
 ---
 
 # MVC

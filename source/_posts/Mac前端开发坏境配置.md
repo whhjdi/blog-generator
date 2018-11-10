@@ -2,6 +2,7 @@
 title: Mac前端开发环境配置
 date: 2018-10-03 11:55:57
 tags: [Mac]
+categories: ["其他"]
 ---
 
 # Mac

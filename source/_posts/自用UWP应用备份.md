@@ -2,6 +2,7 @@
 title: 自用UWP应用备份
 date: 2018-05-10 21:36:54
 tags: [win10]
+categories: ["其他"]
 ---
 
 # UWP

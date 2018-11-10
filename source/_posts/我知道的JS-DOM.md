@@ -2,6 +2,7 @@
 title: 我知道的JS-DOM
 date: 2018-04-20 17:30:00
 tags: [JavaScript]
+categories: ["Javascript"]
 ---
 
 # DOM

@@ -2,6 +2,7 @@
 title: jQuery
 date: 2018-07-16 18:19:51
 tags: [jQuery]
+categories: ["其他"]
 ---
 
 # jQuery

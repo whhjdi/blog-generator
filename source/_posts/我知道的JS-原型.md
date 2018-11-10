@@ -2,6 +2,7 @@
 title: 我知道的JS-原型
 date: 2018-04-04 15:47:45
 tags: [JavaScript]
+categories: ["Javascript"]
 ---
 
 # 原型

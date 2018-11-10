@@ -2,6 +2,7 @@
 title: 我知道的JS-其他
 date: 2018-05-13 10:53:13
 tags: [JavaScript]
+categories: ["Javascript"]
 ---
 
 # 其他

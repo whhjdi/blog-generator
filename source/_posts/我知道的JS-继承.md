@@ -2,6 +2,7 @@
 title: 我知道的JS-继承
 date: 2018-04-10 22:49:21
 tags: [JavaScript]
+categories: ["Javascript"]
 ---
 
 # 继承

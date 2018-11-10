@@ -2,6 +2,7 @@
 title: HTTP
 date: 2018-05-18 10:55:04
 tags: [JavaScript]
+categories: ["其他"]
 ---
 
 # HTTP

@@ -2,6 +2,7 @@
 title: learn-webpack4（八）
 date: 2018-10-17 16:47:52
 tags: [webpack]
+categories: ["wbepack"]
 ---
 
 # 字体文件处理

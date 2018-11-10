@@ -2,6 +2,7 @@
 title: learn-webpack4（十一）
 date: 2018-10-22 19:23:03
 tags: [webpack]
+categories: ["wbepack"]
 ---
 
 # 开发模式&&webpack-dev-server

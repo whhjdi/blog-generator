@@ -2,6 +2,7 @@
 title: 我知道的JS-函数
 date: 2018-04-14 17:40:47
 tags: [JavaScript]
+categories: ["Javascript"]
 ---
 
 # 函数

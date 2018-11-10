@@ -2,6 +2,7 @@
 title: learn-webpack4（一）
 date: 2018-10-10 11:29:12
 tags: [webpack]
+categories: ["wbepack"]
 ---
 
 # webpack

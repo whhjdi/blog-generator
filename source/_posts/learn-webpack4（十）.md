@@ -2,6 +2,7 @@
 title: learn-webpack4（十）
 date: 2018-10-19 17:38:50
 tags: [webpack]
+categories: ["wbepack"]
 ---
 
 # 自动清理 dist 目录（clean plugin）&& watch mode

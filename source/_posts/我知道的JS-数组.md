@@ -2,6 +2,7 @@
 title: 我知道的JS-数组
 date: 2018-04-20 21:44:56
 tags: [JavaScript]
+categories: ["Javascript"]
 ---
 
 # 数组

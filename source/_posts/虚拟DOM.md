@@ -2,6 +2,7 @@
 title: 虚拟DOM
 date: 2018-08-18 17:58:33
 tags: [虚拟DOM]
+categories: ["其他"]
 ---
 
 # 虚拟 DOM

@@ -2,6 +2,7 @@
 title: 我知道的JS-数据类型
 date: 2018-04-04 15:17:42
 tags: [JavaScript]
+categories: ["Javascript"]
 ---
 
 # 前言

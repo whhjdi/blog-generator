@@ -2,6 +2,7 @@
 title: 我知道的JS-异步
 date: 2018-04-09 15:40:17
 tags: [JavaScript]
+categories: ["Javascript"]
 ---
 
 # 异步

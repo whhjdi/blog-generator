@@ -2,6 +2,7 @@
 title: learn-webpack4（六）
 date: 2018-10-16 11:37:35
 tags: [webpack]
+categories: ["wbepack"]
 ---
 
 # Tree Shaking

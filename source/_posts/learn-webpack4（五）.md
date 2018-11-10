@@ -2,6 +2,7 @@
 title: learn-webpack4（五）
 date: 2018-10-14 11:20:30
 tags: [webpack]
+categories: ["wbepack"]
 ---
 
 # SCSS 提取和懒加载

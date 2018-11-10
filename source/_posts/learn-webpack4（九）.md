@@ -2,6 +2,7 @@
 title: learn-webpack4（九）
 date: 2018-10-18 17:11:13
 tags: [webpack]
+categories: ["wbepack"]
 ---
 
 # 处理第三方 JS 库&&自动生成 html

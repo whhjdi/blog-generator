@@ -2,6 +2,7 @@
 title: 我知道的JS-跨域
 date: 2018-05-10 17:35:00
 tags: [JavaScript]
+categories: ["Javascript"]
 ---
 
 # 跨域
