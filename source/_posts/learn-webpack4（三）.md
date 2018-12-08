@@ -1,8 +1,9 @@
 ---
 title: learn-webpack4（三）
-date: 2018-10-11 13:56:07
+date: 2017-10-11 13:56:07
 tags: [webpack]
 categories: ["wbepack"]
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg 
 ---
 
 # 单页面解决方案

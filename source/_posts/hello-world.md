@@ -3,6 +3,7 @@ title: Hello World
 date: 2018-03-01 15:47:45
 tags: [其他]
 categories: ["其他"]
+cover_img: https://ws4.sinaimg.cn/large/006tNbRwly1fxzdy5gzjwj31400u0tog.jpg
 ---
 
 # 记录

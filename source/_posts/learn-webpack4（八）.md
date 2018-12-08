@@ -1,8 +1,9 @@
 ---
 title: learn-webpack4（八）
-date: 2018-10-17 16:47:52
+date: 2017-10-17 16:47:52
 tags: [webpack]
 categories: ["wbepack"]
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg 
 ---
 
 # 字体文件处理

@@ -1,8 +1,9 @@
 ---
 title: learn-webpack4（十）
-date: 2018-10-19 17:38:50
+date: 2017-10-19 17:38:50
 tags: [webpack]
 categories: ["wbepack"]
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg 
 ---
 
 # 自动清理 dist 目录（clean plugin）&& watch mode

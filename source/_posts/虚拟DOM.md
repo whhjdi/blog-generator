@@ -3,6 +3,7 @@ title: 虚拟DOM
 date: 2018-08-18 17:58:33
 tags: [虚拟DOM]
 categories: ["其他"]
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzf1deim7j31hc0u0aa7.jpg
 ---
 
 # 虚拟 DOM

@@ -3,6 +3,7 @@ title: jQuery
 date: 2018-07-16 18:19:51
 tags: [jQuery]
 categories: ["其他"]
+cover_img: https://ws2.sinaimg.cn/large/006tNbRwly1fxzf2iu5m6j30us0ig77h.jpg
 ---
 
 # jQuery

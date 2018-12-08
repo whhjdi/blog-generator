@@ -3,6 +3,7 @@ title: vue基础知识总结（附实例）
 date: 2018-09-21 09:58:33
 tags: [vue]
 categories: [vue]
+cover_img: https://ws2.sinaimg.cn/large/006tNbRwly1fxze1dwpi0j318x0u0kjl.jpg
 ---
 
 # vue 基础知识部分

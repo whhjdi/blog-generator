@@ -1,8 +1,9 @@
 ---
 title: learn-webpack4（九）
-date: 2018-10-18 17:11:13
+date: 2017-10-18 17:11:13
 tags: [webpack]
 categories: ["wbepack"]
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg 
 ---
 
 # 处理第三方 JS 库&&自动生成 html

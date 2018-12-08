@@ -1,8 +1,9 @@
 ---
 title: learn-webpack4（二）
-date: 2018-10-10 12:44:06
+date: 2017-10-10 12:44:06
 tags: [webpack]
 categories: ["wbepack"]
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg 
 ---
 
 # 多页面解决方案

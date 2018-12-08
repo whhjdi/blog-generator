@@ -1,8 +1,9 @@
 ---
 title: learn-webpack4（五）
-date: 2018-10-14 11:20:30
+date: 2017-10-14 11:20:30
 tags: [webpack]
 categories: ["wbepack"]
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg 
 ---
 
 # SCSS 提取和懒加载

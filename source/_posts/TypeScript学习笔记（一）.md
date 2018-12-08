@@ -3,6 +3,7 @@ title: TypeScript学习笔记（一）
 date: 2018-09-30 12:54:45
 tags: [TypeScript]
 categories: ["Typescript"]
+cover_img: https://ws4.sinaimg.cn/large/006tNbRwly1fxze3mpszyj30xc0dwq3z.jpg
 ---
 
 # TypeScript

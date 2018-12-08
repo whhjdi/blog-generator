@@ -1,8 +1,9 @@
 ---
 title: learn-webpack4（十一）
-date: 2018-10-22 19:23:03
+date: 2017-10-22 19:23:03
 tags: [webpack]
 categories: ["wbepack"]
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg 
 ---
 
 # 开发模式&&webpack-dev-server

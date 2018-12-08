@@ -3,6 +3,7 @@ title: HTTP
 date: 2018-05-18 10:55:04
 tags: [JavaScript]
 categories: ["其他"]
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzf1w4n73j31hc0u07dn.jpg
 ---
 
 # HTTP
