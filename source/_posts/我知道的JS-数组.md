@@ -3,6 +3,7 @@ title: 我知道的JS-数组
 date: 2018-04-20 21:44:56
 tags: [JavaScript]
 categories: ["Javascript"]
+cover_img: https://ws4.sinaimg.cn/large/006tNbRwly1fy1lzv6pntj30rs0h719e.jpg
 ---
 
 # 数组

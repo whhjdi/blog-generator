@@ -3,6 +3,7 @@ title: 我知道的JS-其他
 date: 2018-05-13 10:53:13
 tags: [JavaScript]
 categories: ["Javascript"]
+cover_img: https://ws1.sinaimg.cn/large/006tNbRwly1fy1ly2z45wj31320rshdt.jpg
 ---
 
 # 其他

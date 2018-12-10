@@ -3,7 +3,7 @@ title: 自用UWP应用备份
 date: 2018-05-10 21:36:54
 tags: [win10]
 categories: ["其他"]
-cover_img: https://ws1.sinaimg.cn/large/006tNbRwly1fxzepvou8zj31900u0ajf.jpg
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fy1m4cqsj2j31hc0u0e81.jpg
 ---
 
 # UWP

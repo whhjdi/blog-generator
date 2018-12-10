@@ -3,6 +3,7 @@ title: 我知道的JS-DOM
 date: 2018-04-20 17:30:00
 tags: [JavaScript]
 categories: ["Javascript"]
+cover_img: https://ws1.sinaimg.cn/large/006tNbRwly1fy1lxezoixj30wg0mzkjl.jpg
 ---
 
 # DOM

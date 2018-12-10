@@ -3,6 +3,7 @@ title: 我知道的JS-函数
 date: 2018-04-14 17:40:47
 tags: [JavaScript]
 categories: ["Javascript"]
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fy1ly9uclzj30xc0kux1b.jpg
 ---
 
 # 函数

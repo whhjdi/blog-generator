@@ -3,6 +3,7 @@ title: 我知道的JS-深浅拷贝
 date: 2018-04-15 8:07:49
 tags: [JavaScript]
 categories: ["Javascript"]
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fy1m07rhyej30zk0k0atc.jpg
 ---
 
 # 深浅拷贝

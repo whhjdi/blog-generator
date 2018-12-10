@@ -3,6 +3,7 @@ title: 我知道的JS-防抖和节流
 date: 2018-04-05 22:34:16
 tags: [JavaScript]
 categories: ["Javascript"]
+cover_img: https://ws4.sinaimg.cn/large/006tNbRwly1fy1m1pxemoj315o0q21kx.jpg
 ---
 
 # 防抖和节流

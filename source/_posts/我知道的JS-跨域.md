@@ -3,6 +3,7 @@ title: 我知道的JS-跨域
 date: 2018-05-10 17:35:00
 tags: [JavaScript]
 categories: ["Javascript"]
+cover_img: https://ws2.sinaimg.cn/large/006tNbRwly1fy1m1hffmwj30xc0nlnft.jpg
 ---
 
 # 跨域

@@ -3,6 +3,7 @@ title: 我知道的JS-原型
 date: 2018-04-04 15:47:45
 tags: [JavaScript]
 categories: ["Javascript"]
+cover_img: https://ws1.sinaimg.cn/large/006tNbRwly1fy1lym00xbj313i0m8npd.jpg
 ---
 
 # 原型
