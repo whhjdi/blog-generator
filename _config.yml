@@ -4,7 +4,7 @@
 
 # Site
 title: 沐雪
-subtitle: 每一个不曾起舞的日子，都是对生命的辜负
+subtitle: 处江湖之远
 description: 前端
 keywords: 前端
 author: 沐雪
@@ -43,16 +43,16 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
+  path: ""
   per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -75,10 +75,9 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: hexo-casper
 
-
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy: 
+deploy:
   type: git
   repo: https://github.com/whhjdi/whhjdi.github.io.git
   branch: master
