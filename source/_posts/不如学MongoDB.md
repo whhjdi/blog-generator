@@ -49,3 +49,22 @@ db.集合.findOne()
 db.集合.drop()
 db.dropDatabase()
 ```
+
+## Schema
+
+- schema ：用来定义表的模版，实现和 MongoDB 数据库的映射。用来实现每个字段的类型，长度，映射的字段，不具备表的操作能力。
+- model ：具备某张表操作能力的一个集合，是 mongoose 的核心能力。我们说的模型就是这个 Model。
+- entity ：类似记录，由 Model 创建的实体，也具有影响数据库的操作能力。
+
+Schema 中的数据类型
+
+```javascript
+String;
+Number;
+Date;
+Boolean;
+Buffer;
+ObjectId;
+Mixed;
+Array;
+```
