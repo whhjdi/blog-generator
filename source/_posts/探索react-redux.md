@@ -2,7 +2,7 @@
 title: 探索react-redux
 date: 2019-02-11 14:49:53
 tags: [react, redux]
-cover_img:
+cover_img: https://ws4.sinaimg.cn/large/006tKfTcly1g07695jp6kj30i309it8p.jpg
 feature_img:
 description:
 keywords: [react]

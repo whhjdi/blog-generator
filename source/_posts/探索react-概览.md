@@ -2,7 +2,7 @@
 title: 探索react-概览
 date: 2019-02-11 12:25:16
 tags: [react]
-cover_img:
+cover_img: https://ws4.sinaimg.cn/large/006tKfTcly1g07695jp6kj30i309it8p.jpg
 feature_img:
 description:
 keywords: [react]

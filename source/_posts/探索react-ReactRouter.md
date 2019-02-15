@@ -1,11 +1,11 @@
 ---
 title: 探索react-ReactRouter
 date: 2019-02-11 16:18:36
-tags:
-cover_img:
+tags: [react]
+cover_img: https://ws4.sinaimg.cn/large/006tKfTcly1g07695jp6kj30i309it8p.jpg
 feature_img:
 description:
-keywords:
+keywords: [react]
 ---
 
 # React Router
