@@ -42,7 +42,7 @@ keywords: [react]
 ## 参数传递
 
 ```javascript
-const Topic = ({ match }) => <h1>Topic {match.params.id}</h1>;
+const Topic = ({ match }) =>l <h1>Topic {match.params.id}</h1>;
 <Router>
 	<Link to="/topic/1">Topic 1</Link>
 	<Route path="/topic/:id" component={Topic} />
