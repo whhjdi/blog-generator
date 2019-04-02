@@ -18,30 +18,30 @@ cover_img: https://ws4.sinaimg.cn/large/006tNbRwly1fxzeangnl0j31hc0u0u11.jpg
 
 ```javascript
 axios.interceptors.response.use(function(response) {
-  let {
-    config: { url, method, data }
-  } = response;
-  data = JSON.parse(data || "{}");
-  let row = {
-    id: 1,
-    name: "JavaScript 高级程序设计",
-    number: 2
-  };
-  if (url === "/books/1" && method === "get") {
-    response.data = row;
-  } else if (url === "/books/1" && method === "put") {
-    response.data = Object.assign(row, data);
-  }
-  return response;
+	let {
+		config: { url, method, data }
+	} = response;
+	data = JSON.parse(data || "{}");
+	let row = {
+		id: 1,
+		name: "JavaScript 高级程序设计",
+		number: 2
+	};
+	if (url === "/books/1" && method === "get") {
+		response.data = row;
+	} else if (url === "/books/1" && method === "put") {
+		response.data = Object.assign(row, data);
+	}
+	return response;
 });
 // <!-- 专门负责操作远程数据的代码 -->
 
 function fetchDb() {
-  return axios.get("/books/1");
+	return axios.get("/books/1");
 }
 
 function saveDb(newData) {
-  return axios.put("/books/1", newData);
+	return axios.put("/books/1", newData);
 }
 
 // <!-- 专门呈现页面元素的代码 -->
@@ -57,30 +57,30 @@ var template = `
 </div>
 `;
 fetchDb().then(response => {
-  let result = response.data;
-  $("#app").html(
-    template
-      .replace("__number__", result.number)
-      .replace("__name__", result.name)
-  );
-  // <!-- 其他逻辑代码 -->
-  //加1
-  $("#increaseByOne").on("click", e => {
-    let oldResult = parseInt($("#number").text(), 10);
-    let newResult = oldResult + 1;
-    saveDb({ number: newResult }).then(function({ data }) {
-      console.log(data);
-      $("#number").text(data.number);
-    });
-  });
+	let result = response.data;
+	$("#app").html(
+		template
+			.replace("__number__", result.number)
+			.replace("__name__", result.name)
+	);
+	// <!-- 其他逻辑代码 -->
+	//加1
+	$("#increaseByOne").on("click", e => {
+		let oldResult = parseInt($("#number").text(), 10);
+		let newResult = oldResult + 1;
+		saveDb({ number: newResult }).then(function({ data }) {
+			console.log(data);
+			$("#number").text(data.number);
+		});
+	});
 
-  //归零
-  $("#reset").on("click", e => {
-    let newResult = 0;
-    saveDb({ number: newResult }).then(({ data }) => {
-      $("#number").text(data.number);
-    });
-  });
+	//归零
+	$("#reset").on("click", e => {
+		let newResult = 0;
+		saveDb({ number: newResult }).then(({ data }) => {
+			$("#number").text(data.number);
+		});
+	});
 });
 ```
 
@@ -106,26 +106,26 @@ controller 负责调度 mdoel 和 view
 
 ```javascript
 let model = {
-  data: {
-    number: 0,
-    name: ""
-  },
-  fetch(id) {
-    return axios.get(`/books/${id}`).then(response => {
-      this.data = response.data;
-    });
-  },
-  update(newData) {
-    let id = this.data.id;
-    return axios.put(`/books/${id}`, newData).then(({ data }) => {
-      this.data = data;
-    });
-  }
+	data: {
+		number: 0,
+		name: ""
+	},
+	fetch(id) {
+		return axios.get(`/books/${id}`).then(response => {
+			this.data = response.data;
+		});
+	},
+	update(newData) {
+		let id = this.data.id;
+		return axios.put(`/books/${id}`, newData).then(({ data }) => {
+			this.data = data;
+		});
+	}
 };
 
 let view = {
-  el: "#app",
-  template: `
+	el: "#app",
+	template: `
 <div>
   书名：《__name__》，
   数量：__number__
@@ -135,53 +135,53 @@ let view = {
   <button id="reset">归零</button>
 </div>
   `,
-  render(data) {
-    let html = this.template
-      .replace("__name__", data.name)
-      .replace("__number__", data.number);
-    console.log(data);
-    $(this.el).html(html);
-  }
+	render(data) {
+		let html = this.template
+			.replace("__name__", data.name)
+			.replace("__number__", data.number);
+		console.log(data);
+		$(this.el).html(html);
+	}
 };
 
 var controller = {
-  init({ view, model }) {
-    this.view = view;
-    this.model = model;
-    this.view.render(this.model.data);
-    this.bindEvents();
-    console.log(1);
-    this.fetchModel();
-    console.log(2);
-  },
-  events: [
-    { type: "click", selector: "#increaseByOne", fnName: "add" },
-    { type: "click", selector: "#reset", fnName: "reset" }
-  ],
-  bindEvents() {
-    this.events.map(event => {
-      $(this.view.el).on(
-        event.type,
-        event.selector,
-        this[event.fnName].bind(this)
-      );
-    });
-  },
-  add() {
-    let newData = { number: this.model.data.number + 1 };
-    this.updateModel(newData);
-  },
+	init({ view, model }) {
+		this.view = view;
+		this.model = model;
+		this.view.render(this.model.data);
+		this.bindEvents();
+		console.log(1);
+		this.fetchModel();
+		console.log(2);
+	},
+	events: [
+		{ type: "click", selector: "#increaseByOne", fnName: "add" },
+		{ type: "click", selector: "#reset", fnName: "reset" }
+	],
+	bindEvents() {
+		this.events.map(event => {
+			$(this.view.el).on(
+				event.type,
+				event.selector,
+				this[event.fnName].bind(this)
+			);
+		});
+	},
+	add() {
+		let newData = { number: this.model.data.number + 1 };
+		this.updateModel(newData);
+	},
 
-  fetchModel() {
-    this.model.fetch(1).then(() => {
-      this.view.render(this.model.data);
-    });
-  },
-  updateModel(newData) {
-    this.model.update(newData).then(() => {
-      this.view.render(this.model.data);
-    });
-  }
+	fetchModel() {
+		this.model.fetch(1).then(() => {
+			this.view.render(this.model.data);
+		});
+	},
+	updateModel(newData) {
+		this.model.update(newData).then(() => {
+			this.view.render(this.model.data);
+		});
+	}
 };
 controller.init({ view, model });
 ```
@@ -195,7 +195,7 @@ BUT
 ## 面向对象
 
 ```javascript
-class Model = {
+class Model  {
   constructor({resource,data}){
     this.resource = resource
     this.data = data
@@ -221,7 +221,7 @@ let model = new Model({
   }
 })
 
-class view{
+class View {
   constructor({template,el}){
     this.template = template
     this.el = el
@@ -305,30 +305,30 @@ var controller = new Controller({
 
 ```javascript
 class EventHub {
-  constructor() {
-    this.events = {};
-  }
-  on(eventName, fn) {
-    if (!this.events[eventName]) {
-      this.events[eventName] = [];
-    }
-    this.events[eventName].push(fn);
-  }
-  emit(eventName, params) {
-    let fnList = this.events[eventName];
-    fnList.map(fn => {
-      fn.apply(null, params);
-    });
-  }
-  off(eventName, fn) {
-    let fnList = this.events[eventName];
-    for (let i = 0; i < fnList.length; i++) {
-      if (fnList[i] === fn) {
-        delete fnList[i];
-        break;
-      }
-    }
-  }
+	constructor() {
+		this.events = {};
+	}
+	on(eventName, fn) {
+		if (!this.events[eventName]) {
+			this.events[eventName] = [];
+		}
+		this.events[eventName].push(fn);
+	}
+	emit(eventName, params) {
+		let fnList = this.events[eventName];
+		fnList.map(fn => {
+			fn.apply(null, params);
+		});
+	}
+	off(eventName, fn) {
+		let fnList = this.events[eventName];
+		for (let i = 0; i < fnList.length; i++) {
+			if (fnList[i] === fn) {
+				delete fnList[i];
+				break;
+			}
+		}
+	}
 }
 ```
 
@@ -350,7 +350,7 @@ null 就行
 
 ```javascript
 this.model.on("changed", () => {
-  this.view.render(this.model.data);
+	this.view.render(this.model.data);
 });
 ```
 
