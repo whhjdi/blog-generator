@@ -8,9 +8,9 @@ description:
 keywords:
 ---
 
-# i18n
+# 国际化
 
-i18n意思就是i开头，n结尾，中间还有18个字母，23333
+`i18n`意思就是i开头，n结尾，中间还有18个字母，23333
 
 ```html
 <script src="../node_modules/vue/dist/vue.js"></script>
