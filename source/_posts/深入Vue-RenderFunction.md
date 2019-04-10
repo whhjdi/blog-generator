@@ -2,7 +2,7 @@
 title: 深入Vue-RenderFunction
 date: 2019-04-10 13:25:36
 tags:
-cover_img:
+cover_img: https://ws2.sinaimg.cn/large/006tNc79ly1g1xr3lbharj30xr0e674k.jpg
 feature_img:
 description:
 keywords:

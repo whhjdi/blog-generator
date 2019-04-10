@@ -2,7 +2,7 @@
 title: 深入Vue-Reactivity
 date: 2019-04-09 17:07:27
 tags:
-cover_img:
+cover_img: https://ws2.sinaimg.cn/large/006tNc79ly1g1xr3lbharj30xr0e674k.jpg
 feature_img:
 description:
 keywords:
