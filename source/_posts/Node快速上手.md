@@ -25,16 +25,63 @@ keywords: [Node]
 不同于浏览器的全局的window,在Node中global是全局对象
 
 ```javascript
-setTimeout()
+CommonJS
 
-clearTimeout()
+Buffer,process,console
 
-setInterval()
-
-clearInterval()
+timer:
+	setTimeout(),clearTimeout(),setInterval(),clearInterval(),setImmetiate()
 ```
 
-## 模块系统
+
+
+## process
+
+```js
+argv,argv0,execArgv,execPath,cwd
+```
+
+- setImmediate和process.nextTick的区别
+
+  nextTick要早一点（放在当前队列的队尾），setImmediate放在下一次循环的首部，事件队列的知识，在后边再写
+
+### Buffer
+
+用于处理二进制数据流
+
+实例类似整数数组，大小固定
+
+```js
+const buf1 = Buffer.alloc(10);
+const buf2 = Buffer.alloc(10, 0x1);
+const buf3 = Buffer.alloc(5, 1);
+const buf4 = Buffer.allocUnsafe(5, 1);
+const buf5 = Buffer.from([1, 2, 3]);
+const buf6 = Buffer.from("test");
+const buf7 = Buffer.from("test", "base64");
+console.log(buf1, buf2, buf3, buf4, buf5, buf6, buf7);
+console.log(Buffer.byteLength(buf1));
+console.log(Buffer.isBuffer(buf1));
+const buf8 = Buffer.concat([buf6, buf7]);
+console.log(buf8.toString());
+//实例的方法
+buf.length
+buf8.toString('base64')
+buf.fill(10,2,6)
+buf.equals()
+buf.indexOf()
+buf.copy()
+```
+
+```
+
+```
+
+
+
+### 模块系统
+
+
 
 声明的变量并不添加到global对象中，而是在当前文件中，每一个文件都可以看作一个模块。所以我们需要一种导入导出模块的机制
 
@@ -60,11 +107,23 @@ logger()
 (function (exports, require, module, __filename, __dirname) {
 	//....
 })
+//exports可以看做module.exports的简写，可以添加属性，但是不能更改他的指向
 ```
 
 ### path模块
 
-打印一下
+```js
+reslove,join,normalize,
+basename,extname,dirname,
+parse,format
+sep,delimiter,
+```
+
+`__dirname`,` __filename`总是返回绝对路径
+
+process.cwd返回node命令所在的 文件夹
+
+
 
 ```javascript
 const path = require('path');
@@ -86,6 +145,72 @@ console.log(pathObj, pathObj2)
   name: 'app' 
 }
 ```
+
+### stream
+
+```js
+const fs = require("fs");
+
+//读
+// const rs = fs.createReadStream("./app.js");
+
+// rs.pipe(process.stdout);
+
+
+//写
+const ws = fs.createWriteStream("./text.txt");
+const tid = setInterval(() => {
+	const num = parseInt(Math.random() * 10);
+
+	if (num < 8) {
+		ws.write(num + "");
+	} else {
+		clearInterval(tid);
+		ws.end();
+	}
+}, 200);
+
+ws.on("finish", () => {
+	console.log("done");
+});
+
+```
+
+- 关于回调地狱
+
+```js
+const fs = require("fs");
+
+const promisify = require("util").promisify;
+
+const read = promisify(fs.readFile);
+
+//使用promise
+// read("./app.js")
+// 	.then(data => {
+// 		console.log(data.toString());
+// 	})
+// 	.catch(err => {
+// 		console.log(err);
+// 	});
+
+//使用async/await
+async function test() {
+	try {
+		const data = await read("./app.js");
+		console.log(data.toString());
+	} catch (err) {
+		console.log(err);
+	}
+}
+
+test();
+
+```
+
+### 
+
+
 
 ### OS模块
 
@@ -180,9 +305,51 @@ const server = http.createServer(function (req, res) {
   }
 })
 
-server.listen(3000)
-console.log('Listening on port 3000')
+server.listen(3000,()=>{
+	console.log('Listening on port 3000')
+})
+
 ```
+
+
+
+
+
+## debug
+
+### Inspector调试
+
+### IDE调试
+
+
+
+## 项目配置
+
+gitignore,editconfig,ESLint
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
