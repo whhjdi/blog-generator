@@ -11,22 +11,70 @@ cover_img: https://ws4.sinaimg.cn/large/006tNbRwly1fxzdjzf0ctj316f0u0b29.jpg
 ## 安装 Homebrew
 
 前提是科学上网
+[ShadowsocksX-NG-R](https://github.com/wzdnzd/ShadowsocksX-NG-R/releases)
 
+# 安装Xcode命令行工具 
+2019.6.6 -下边的命令已经~~失效~~ ,会查找软件失败，需要自己去 [developer apple下载安装](https://developer.apple.com/download/more/)
 ```bash
-# 安装Xcode命令行工具
 $ xcode-select --install
+
+```
 # 安装homebrow
+```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ## 安装必备工具
 
 ```bash
-brew install coreutils vim node git wget
+brew install coreutils vim git wget
+```
+### 使用nvm管理node
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+```
+建议使用nvm安装和管理node
+
+在 ~/.bashrc, ~/.profile, or ~/.zshrc 中放入下列代码
+```bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
+# This loads nvm bash_completion
 ```
 
+```bash
+nvm install node
+# 安装最新的版本
+mvm ls
+# 列出所有安装的node版本
+nvm use 
+# xxx切换node版本
+```
 <!--more-->
+### npm 
+```bash
+# 换淘宝源
+npm config set registry https://registry.npm.taobao.org
 
+# 恢复
+npm config set registry https://registry.npmjs.org/
+
+# 检测是否成功
+
+# // 配置后可通过下面方式来验证是否成功
+npm config get registry
+# // 或
+npm info express
+```
+
+## yarn
+
+注意brew会在安装yarn的时候安装node,因为我们使用nvm来管理node，所以不要用用brew安装node,所以
+```bash
+brew install yarn --ignore-dependencies
+```
 ## git 和 github
 
 ### github 配置
@@ -81,9 +129,26 @@ clone 你的博客备份
 npm install hexo-cli -g
 #安装依赖
 npm install
+# 如果不能正常安装就使用yarn
+
+# //下边的如果需要就安装
 npm install hexo-deployer-git --save
 npm install hexo-generator-feed --save
 npm install hexo-generator-sitemap --save
 ```
 
 现在就可以正常使用 hexo 写博客啦
+
+## 其他
+
+### node-sass
+这东西会被墙，所以在 `.bashrc`中加入
+```bash
+export SASS_BINARY_SITE="https://npm.taobao.org/mirrors/node-sass"
+```
+
+### PATH写法
+
+```bash
+export PATH="目录的绝对路径:$PATH"
+```
