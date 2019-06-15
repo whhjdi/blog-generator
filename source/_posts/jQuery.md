@@ -6,8 +6,6 @@ categories: ["其他"]
 cover_img: https://ws2.sinaimg.cn/large/006tNbRwly1fxzf2iu5m6j30us0ig77h.jpg
 ---
 
-# jQuery
-
 ## 实现一个 jQuery 的 API
 
 实现一个函数,并判断参数是节点还是选择器,返回一个 nodes(数组形式的对象)

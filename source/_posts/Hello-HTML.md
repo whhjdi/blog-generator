@@ -6,8 +6,6 @@ categories: ["html"]
 cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdw01bysj30u011ib29.jpg
 ---
 
-# HTML
-
 ## 如何理解 HTML 的语义化
 
 最早的时候是没有前端程序员的,一些后端程序员写 html,但是他们中的一些人对 css 不太了解,就用 table 布局,但是,table 是用来展示表格的,这就违反了语义化

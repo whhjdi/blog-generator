@@ -3,10 +3,8 @@ title: learn-webpack4（一）
 date: 2017-10-10 11:29:12
 tags: [webpack]
 categories: ["wbepack"]
-cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg 
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg
 ---
-
-# webpack
 
 webpack 作为目前最主流的打包工具，可以极大地方便开发者实现代码加密和多平台的兼容，位前端工程化提供了极好的支持。
 

@@ -3,16 +3,16 @@ title: learn-webpack4（三）
 date: 2017-10-11 13:56:07
 tags: [webpack]
 categories: ["wbepack"]
-cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg 
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg
 ---
 
-# 单页面解决方案
+## 单页面解决方案
 
-## 代码分割和懒加载
+### 代码分割和懒加载
 
 通过 webpack 的写法和内置函数实现
 
-### webpack 配置
+#### webpack 配置
 
 package.json 和上个 demo 一样
 webpack 配置如下
@@ -36,7 +36,7 @@ module.exports = {
 };
 ```
 
-### page.js 的写法
+#### page.js 的写法
 
 import 会自动运行引入的代码
 

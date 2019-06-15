@@ -6,8 +6,6 @@ categories: ["其他"]
 cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzf1w4n73j31hc0u07dn.jpg
 ---
 
-# HTTP
-
 我买了[图解 HTTP](http://www.duokan.com/reader/www/app.html?id=a8c81c979f514cacb2e2435d85f6ba38)
 
 > Web 使用一种名为 HTTP（HyperText Trans-fer Protocol，超文本传输协议）的协议作为规范，完成从客户端到服务器端等一系列运作流程。

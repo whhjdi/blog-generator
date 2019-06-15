@@ -6,8 +6,6 @@ categories: ["其他"]
 cover_img: https://ws1.sinaimg.cn/large/006tNbRwly1fxzeb1zo5uj31dr0rsx6p.jpg
 ---
 
-# AJAX
-
 AJAX 全称 Asynchronous Javascript And XML，即异步的 JavaScript 和 XML，AJAX 允许以任意形式发送请求并且以任意形式展示。
 符合如下技术的就叫做 AJAX：使用 XMLHttpRequest 发送请求,服务器返回 XML 格式的字符串,浏览器解析 XML，并局部更新页面
 

@@ -3,10 +3,10 @@ title: learn-webpack4（七）
 date: 2017-10-16 12:19:10
 tags: [webpack]
 categories: ["wbepack"]
-cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg 
+cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg
 ---
 
-# 图片处理
+## 图片处理
 
 图片处理 和 Base64 编码 (url-loader)
 图片压缩 (img-loader)
@@ -14,7 +14,7 @@ cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzdlh2mt3j31fo0u0aer.jpg
 
 <!--more-->
 
-## base64 编码和图片压缩
+### base64 编码和图片压缩
 
 ```javascript
 // webpack.config.js
@@ -96,7 +96,7 @@ module.exports = {
 };
 ```
 
-## 雪碧图合成
+### 雪碧图合成
 
 根据文档加入相应的配置即可
 

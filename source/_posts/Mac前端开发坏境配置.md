@@ -13,13 +13,17 @@ cover_img: https://ws4.sinaimg.cn/large/006tNbRwly1fxzdjzf0ctj316f0u0b29.jpg
 前提是科学上网
 [ShadowsocksX-NG-R](https://github.com/wzdnzd/ShadowsocksX-NG-R/releases)
 
-# 安装Xcode命令行工具 
-2019.6.6 -下边的命令已经~~失效~~ ,会查找软件失败，需要自己去 [developer apple下载安装](https://developer.apple.com/download/more/)
+# 安装 Xcode 命令行工具
+
+2019.6.6 -下边的命令已经~~失效~~ ,会查找软件失败，需要自己去 [developer apple 下载安装](https://developer.apple.com/download/more/)
+
 ```bash
 $ xcode-select --install
 
 ```
-# 安装homebrow
+
+# 安装 homebrow
+
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -29,18 +33,21 @@ $ xcode-select --install
 ```bash
 brew install coreutils vim git wget
 ```
-### 使用nvm管理node
+
+### 使用 nvm 管理 node
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 ```
-建议使用nvm安装和管理node
+
+建议使用 nvm 安装和管理 node
 
 在 ~/.bashrc, ~/.profile, or ~/.zshrc 中放入下列代码
+
 ```bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 # This loads nvm bash_completion
 ```
 
@@ -49,11 +56,14 @@ nvm install node
 # 安装最新的版本
 mvm ls
 # 列出所有安装的node版本
-nvm use 
+nvm use
 # xxx切换node版本
 ```
+
 <!--more-->
-### npm 
+
+### npm
+
 ```bash
 # 换淘宝源
 npm config set registry https://registry.npm.taobao.org
@@ -71,10 +81,12 @@ npm info express
 
 ## yarn
 
-注意brew会在安装yarn的时候安装node,因为我们使用nvm来管理node，所以不要用用brew安装node,所以
+注意 brew 会在安装 yarn 的时候安装 node,因为我们使用 nvm 来管理 node，所以不要用用 brew 安装 node,所以
+
 ```bash
 brew install yarn --ignore-dependencies
 ```
+
 ## git 和 github
 
 ### github 配置
@@ -142,12 +154,14 @@ npm install hexo-generator-sitemap --save
 ## 其他
 
 ### node-sass
-这东西会被墙，所以在 `.bashrc`中加入
+
+这东西会被墙，所以在 `~/.bashrc`中加入
+
 ```bash
 export SASS_BINARY_SITE="https://npm.taobao.org/mirrors/node-sass"
 ```
 
-### PATH写法
+### PATH 写法
 
 ```bash
 export PATH="目录的绝对路径:$PATH"
