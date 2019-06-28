@@ -6,9 +6,9 @@ categories: ["其他"]
 cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fxzf1w4n73j31hc0u07dn.jpg
 ---
 
-我买了[图解 HTTP](http://www.duokan.com/reader/www/app.html?id=a8c81c979f514cacb2e2435d85f6ba38)
+多看阅读-[图解 HTTP](http://www.duokan.com/reader/www/app.html?id=a8c81c979f514cacb2e2435d85f6ba38)
 
-> Web 使用一种名为 HTTP（HyperText Trans-fer Protocol，超文本传输协议）的协议作为规范，完成从客户端到服务器端等一系列运作流程。
+> Web 使用一种名为 HTTP（HyperText Transfer Protocol，超文本传输协议）的协议作为规范，完成从客户端到服务器端等一系列运作流程。
 > 通常使用的网络（包括互联网）是在 TCP/IP 协议族的基础上运作的。而 HTTP 属于它内部的一个子集。
 
 ## TCP/IP
@@ -84,6 +84,15 @@ TCP/IP 协议族按层次分别分为以下 4 层：应用层、传输层、网�
 504 - 网关超时
 ```
 
+## HTTP 首部字段
+
+根据实际用途分为以下四种，具有哪些就看书好了
+
+1. 通用首部字段
+2. 请求首部字段
+3. 响应首部字段
+4. 实体首部字段
+
 ## 缓存
 
 1. Cache-Control(属于通用首部字段))
@@ -91,6 +100,7 @@ TCP/IP 协议族按层次分别分为以下 4 层：应用层、传输层、网�
    可以把时间设置的很长（1 年，10 年等等），如果资源需要更新，换个 url(加查询参数或者随机数)
 
    ```javascript
+   //单位是s
    Cache-Control: private, max-age=0, no-cache
    ```
 
@@ -101,14 +111,17 @@ TCP/IP 协议族按层次分别分为以下 4 层：应用层、传输层、网�
    Expires: Wed, 04 Jul 2012 08:26:05 GMT
    ```
 
-3. ETag：请求但是不下载
+3. ETag / If-None-Match
    响应首部字段 ETag 能告知客户端实体标识。它是一种可将资源以字符串形式做唯一性标识的方式。服务器会为每份资源分配对应的 ETag 值。
+   当再次请求这个资源时，会通过`If-None-Match：W/"xxxxxxx-xxx"`告诉服务器，服务器做一个对比，如果两个 ETag 相同就返回 304,否则就返回新资源
 
    ```javascript
    ETag: "82e22293907ce725faf67773957acd12";
    ```
 
-4. 其他：md5 摘要算法
+4. Last-Modified / If-Modified-Since
+   服务器在响应请求时，告诉浏览器资源的最后修改时间
+   当再次请求相同资源时，会通过 `If-Modified-Since:Tue 24 Jan 2018 03:22:21 GMT`告诉服务器最后的修改时间，服务器做一个对比，如果服务器上的最后修改时间大于 If-Modified-Since 的，那么久说明修改了，就返回新的资源，否则返回 304
 
 ## Cookie
 

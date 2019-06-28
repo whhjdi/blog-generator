@@ -31,8 +31,10 @@ DocumentFragment：文档的片段
 
 ```html
 <body onload="doSomething()">
-<div onclick="console.log('触发事件')">
-<!-- 不推荐 -->
+  <div onclick="console.log('触发事件')">
+    <!-- 不推荐 -->
+  </div>
+</body>
 ```
 
 ```javascript
@@ -86,6 +88,7 @@ event.preventDefault;
 
 ## 常见事件
 
+```js
 鼠标事件
 onmousedown, onmouseup, onclick, ondbclick, onmousewheel, onmousemove, onmouseover, onmouseout
 
@@ -145,6 +148,7 @@ ondrop：在一个拖动过程中，释放鼠标键时触发此事件；
 
 移动端的触摸事件
 touchstart touchmove touchend touchcancel
+```
 
 ## 事件委托
 
@@ -155,11 +159,11 @@ event.target 而 target 是事件的真正触发者
 
 ```html
 <ul id="ul">
-    <li><span>1</span></li>
-    <li><span>3</span></li>
-    <li><span>2</span></li>
-    <li><span>4</span></li>
-    <li><span>5</span></li>
+  <li><span>1</span></li>
+  <li><span>3</span></li>
+  <li><span>2</span></li>
+  <li><span>4</span></li>
+  <li><span>5</span></li>
 </ul>
 ```
 

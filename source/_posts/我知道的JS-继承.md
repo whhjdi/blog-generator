@@ -6,11 +6,12 @@ categories: ["Javascript"]
 cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fy1m17r3gyj30qe0ipwrf.jpg
 ---
 
-# 继承
+## 继承
 
 继承可以使得子类具有父类的各种属性和方法
+在高程中介绍了好多种，但是完美的就这一种，所以，就理解好这一种就可以了
 
-## ES5 中的继承
+### ES5 中的继承
 
 ```javascript
 function Human(name) {
@@ -23,19 +24,16 @@ function Man(name) {
   Human.call(this, name);
   this.gender = "男";
 }
-Man.prototype.fight = function() {
-  console.log("fight");
-};
 //如果 Man.prototype.__proto__ = Human.prototype就实现了继承
-// 但是这样写是不允许的
-var f = function() {};
-f.prototype = Human.prototype;
-Man.prototype = new f();
+// 但是这样写是不允许的,
+//所以
+Man.prototype = Object.create(Human.prototype);
+Man.prototype.constructor = Man;
 ```
 
 <!--more-->
 
-## ES6 中的继承
+### ES6 中的继承
 
 ```javascript
 class Human {

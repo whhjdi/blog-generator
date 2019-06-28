@@ -10,7 +10,7 @@ keywords: [JavaScript, 数据结构，算法]
 
 ## 前言
 
-今年打算看俩本书，一本是《学习 JavaScript 数据结构与算法》，另一本是《JavaScript 设计模式与开发实践》，先占着坑，慢慢填
+今年打算看两本书，一本是《学习 JavaScript 数据结构与算法》，另一本是《JavaScript 设计模式与开发实践》，先占着坑，慢慢填
 
 ## 数据结构
 

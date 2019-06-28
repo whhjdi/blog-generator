@@ -88,11 +88,29 @@ parseFloat((0.1 + 0.2).toFixed(10));
 ## (a ==1 && a== 2 && a==3) 可能为 true 吗？
 
 ```javascript
-a = {
-  value: 0,
+//第一种
+
+var temp = 1;
+Object.defineProperty(window, "a", {
+  get() {
+    return temp++;
+  }
+});
+
+//第二种
+
+var a = {
+  temp: 1,
+  valueOf() {
+    return this.temp++;
+  }
+};
+//第三种
+
+var a = {
+  temp: 1,
   toString() {
-    a.value += 1;
-    return a.value;
+    return this.temp++;
   }
 };
 ```

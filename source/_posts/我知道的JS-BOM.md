@@ -67,7 +67,7 @@ Edge: EdgeHTML 引擎
 不要使用 table 布局，可能很小的一个小改动会造成整个 table 的重新布局
 使用 documentFragment 操作 DOM
 动画使用 absolute 定位或 fixed 定位，这样可以减少对其他元素的影响。
-使用 window.requestAnimationFrame()，因为它可以把代码推迟到下一次重流时执行，而不是立即要求页面重流。
+使用 window.requestAnimationFrame()，因为它可以把代码推迟到下一次回流时执行，而不是立即要求页面回流。
 使用虚拟 DOM（virtual DOM）库。
 
 ## window

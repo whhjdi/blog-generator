@@ -13,7 +13,8 @@ keywords: [react]
 ![](https://upload-images.jianshu.io/upload_images/5287253-82f6af8e0cc9012b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp)
 
 - 创建时：
-  ->constructor(初始化内部状态，唯一可以直接修改 state 的地方)->getDerivedStateFromProps(当 state 需要从 props 初始化时使用，不推荐使用，每次 render 都会调用，场景：表单控件获取默认值)
+  ->constructor(初始化内部状态，唯一可以直接修改 state 的地方)
+  ->getDerivedStateFromProps(当 state 需要从 props 初始化时使用，不推荐使用，每次 render 都会调用，场景：表单控件获取默认值)
   ->render
   ->componentDidMount(ui 渲染完成后调用，只执行一次，场景：获取外部资源)
 

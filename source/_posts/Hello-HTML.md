@@ -62,7 +62,7 @@ ctx.rect(x, y, width, height);
 ctx.fill();
 ```
 
-我使用 canvas 制作了一个画板，有兴趣的可以看一看[点击查看](http://wanghandi.top/canvas-demo/)
+我使用 canvas 制作了一个画板，有兴趣的可以看一看[点击查看](http://whhjdi.xyz/canvas-demo/)
 
 ## SVG
 
