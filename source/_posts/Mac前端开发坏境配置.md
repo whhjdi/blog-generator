@@ -166,3 +166,11 @@ export SASS_BINARY_SITE="https://npm.taobao.org/mirrors/node-sass"
 ```bash
 export PATH="目录的绝对路径:$PATH"
 ```
+
+### other
+
+mac 安装了 conda 后，前面会有一个(base),通过下面的方法去掉
+
+```
+conda config --set auto_activate_base false
+```
