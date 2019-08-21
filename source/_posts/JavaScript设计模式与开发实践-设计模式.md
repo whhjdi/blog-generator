@@ -2,7 +2,7 @@
 title: JavaScript设计模式与开发实践-设计模式
 date: 2019-06-11 19:11:27
 tags: [JavaScript]
-cover_img: http://ww2.sinaimg.cn/large/006tNc79ly1g3xdco7aaoj30u011pte1.jpg
+cover_img: https://i.loli.net/2019/08/21/BlydImUieGf6qRk.jpg
 feature_img:
 description:
 keywords:

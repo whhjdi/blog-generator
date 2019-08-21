@@ -2,7 +2,7 @@
 title: flutter
 date: 2019-06-07 22:22:42
 tags: [flutter]
-cover_img: http://ww3.sinaimg.cn/large/006tNc79ly1g3xde8nykvj31j10u0k0l.jpg
+cover_img: https://i.loli.net/2019/08/21/VJnIgoRUBht6kbP.jpg
 feature_img:
 description:
 keywords: [flutter]
