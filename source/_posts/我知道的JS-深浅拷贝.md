@@ -7,7 +7,7 @@ cover_img: https://ws3.sinaimg.cn/large/006tNbRwly1fy1m07rhyej30zk0k0atc.jpg
 ---
 
 # 深浅拷贝
-
+- 2019.9更新
 对于简单类型的数据来说，赋值就是深拷贝
 对于复杂类型的数据（对象）来说，才要区分浅拷贝和深拷贝
 
@@ -69,21 +69,210 @@ a.age[0] === 20; //false
 
 递归拷贝
 
-```javascript
-function clone(object) {
-  var object2;
-  if (!(object instanceof Object)) {
-    return object;
-  } else if (object instanceof Array) {
-    object2 = [];
-  } else if (object instanceof Object) {
-    object2 = {};
-  } else if (object instanceof Function) {
-    object2 = eval(object.toString());
+```js
+// 首先第一步需要判断是否是对象，所以写一个函数
+function isObj(obj){
+  //如果是对象就返回 true
+  return typeof obj === 'object' && obj !== null
+}
+function deepClone(obj){
+  if(!isObj(obj)) return obj
+  let result = Array.isArray(obj) ? [] : {}
+  for(let key in obj){
+    if(Object.prototype.hasOwnProperty.call(obj,key)){
+      result[key] = deepClone(obj[key])
+    }
   }
-  for (let key in Object) {
-    object2[key] = clone(object[key]);
+  return result
+}
+//test
+var a = {
+    a1: undefined,
+    a2: null,
+    a3: 123,
+    a4: 'muxue',
+    a5: {
+      b1: 'b1',
+      b2: 'b2' 
+    },
+    a6: {
+      b3: 123
+    }
+}
+var b = deepClone(a);
+
+a.a5 = 'a5';
+a.a6.b3 = 456;
+
+console.log(b);
+//测试完就会发现基本的深拷贝就实现了
+//然后还有两个问题需要解决
+//1. 循环引用的问题
+// 2. symbol的问题，这里需要解释一下，很多人会有疑问，symbol不是基本类型吗？为什么需要考虑它
+//其实原因很简单，ES6的对象的key可以是字符串，也可以是symbol，所以需要考虑的symbol作为key的情况
+```
+
+解决循环引用
+```js
+//准备一个weakMap，weakMap的key就是你要拷贝的对象，我们需要判断weakMap有木有这个key，有就说明拷贝过了,直接return对应的值就好了
+function isObj(obj){
+  return typeof obj === 'object' && obj !== null
+}
+function deepClone(obj,map= new WeakMap()){
+  if(!isObj(obj)) return obj
+  if(map.has(obj)) return map.get(obj)
+  let result = Array.isArray(obj) ? [] : {}
+  map.set(obj,result)
+  for(let key in obj){
+    if(Object.prototype.hasOwnProperty.call(obj,key)){
+      //这里也可以判断一下是否是对象来决定是否使用递归
+      result[key] = deepClone(obj[key],map)
+    }
   }
-  return object2;
+  return result
+}
+//test
+var a = {
+    a1: undefined,
+    a2: null,
+    a3: 123,
+    a4: 'muxue',
+    a5: {
+      b1: 'b1',
+      b2: 'b2' 
+    },
+    a6: {
+      b3: 123
+    }
+}
+a.circle = a
+var b = deepClone(a);
+
+a.a5 = 'a5';
+a.a6.b3 = 456;
+
+console.log(b);
+//循环引用的问题就圆满解决了
+```
+
+关于Symbol的问题
+
+```js
+// 正常情况下你是遍历不到对象中的Symbol属性的
+//所以一个思路是单独处理Symbol
+//通过Object.getOwnPropertySymbols(obj)可以获取到对象的Symbol属性
+function deepClone(obj,map= new WeakMap()){
+  if(!isObj(obj)) return obj
+  if(map.has(obj)) return map.get(obj)
+  let result = Array.isArray(obj) ? [] : {}
+  map.set(obj,result)
+
+  let symKeys = Object.getOwnPropertySymbols(obj); // 查找
+    if (symKeys.length) { // 查找成功	
+        symKeys.forEach(symKey => {
+            if (isObj(obj[symKey])) {
+                result[symKey] = cloneDeep4(obj[symKey], map); 
+            } else {
+                result[symKey] = obj[symKey];
+            }    
+        });
+    }
+  for(let key in obj){
+    if(Object.prototype.hasOwnProperty.call(obj,key)){
+      //这里也可以判断一下是否是对象来决定是否使用递归
+      if(isObj(obj[key])){
+        result[key] = deepClone(obj[key],map)
+      }else{
+        result[key] = obj[key]
+      }
+    }
+  }
+  return result
+}
+//上面的方法把Symbol属性单独处理，显得不够优雅
+//所以我们还可以通过反射Reflect来直接获取对象的所有属性
+function deepClone(obj,map= new WeakMap()){
+  if(!isObj(obj)) return obj
+  if(map.has(obj)) return map.get(obj)
+  let result = Array.isArray(obj) ? [] : {}
+  map.set(obj,result)
+
+  Reflect.ownKeys(obj).forEach(key=>{
+    if(isObj(obj[key])){
+        result[key] = deepClone(obj[key],map)
+      }else{
+        result[key] = obj[key]
+      }
+  })
+  return result
+}
+//这种方式比较优雅
+
+//test
+var a = {
+    a1: undefined,
+    a2: null,
+    a3: 123,
+    a4: 'muxue',
+    a5: {
+      b1: 'b1',
+      b2: 'b2' 
+    },
+    a6: {
+      b3: 123
+    },
+    [Symbol('q')]:1,
+    [Symbol('2')]:2
+}
+console.log(Object.getOwnPropertySymbols(a))
+console.log(Reflect.ownKeys(a))
+var b = deepClone(a);
+console.log(Object.getOwnPropertySymbols(b))
+console.log(Reflect.ownKeys(b))
+a.a5 = 'a5';
+a.a6.b3 = 456;
+console.log(a)
+console.log(b);
+```
+循环的方式
+```js
+// 一般来说能使用递归的也能使用循环解决
+function deepClone(obj){
+  let root = {}
+  let stack = [
+    {
+      parent: root,
+      key:undefined,
+      data: obj
+    }
+  ]
+
+  while(stack.length){
+    let o = stack.pop()
+    let parent = o.parent
+    let key = o.key
+    let data = o.data
+
+    let result = root
+    if(typeof key !== 'undefined'){
+      result = parent[key] = {}
+    }
+
+    for( let key in data){
+      if(data.hasOwnProperty(key)){
+        if(isObj(data[key])){
+          stack.push({
+            parent: result,
+            key,
+            data: data[key]
+          })
+        }else{
+          result[key] = data[key]
+        }
+      }
+    }
+  }
+  return root
 }
 ```
+综上一个基本的深拷贝就完成了，但是这里只是区分了数组和object,对于Date,正则，函数等类型都没有考虑
