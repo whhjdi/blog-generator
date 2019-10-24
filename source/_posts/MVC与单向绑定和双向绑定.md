@@ -316,7 +316,7 @@ class EventHub {
   }
   emit(eventName, params) {
     let fnList = this.events[eventName];
-    fnList.map(fn => {
+    fnList.forEach(fn => {
       fn.apply(null, params);
     });
   }

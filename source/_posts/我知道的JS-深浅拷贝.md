@@ -236,7 +236,7 @@ console.log(b);
 ```
 循环的方式
 ```js
-// 一般来说能使用递归的也能使用循环解决
+// 一般来说能使用递归的也能使用循环解决,简单写一下
 function deepClone(obj){
   let root = {}
   let stack = [
@@ -275,4 +275,71 @@ function deepClone(obj){
   return root
 }
 ```
-综上一个基本的深拷贝就完成了，但是这里只是区分了数组和object,对于Date,正则，函数等类型都没有考虑
+
+
+## 完整的实现
+
+```javascript
+function isObj(obj) {
+	return typeof obj === "object" && obj !== null;
+}
+
+function isType(obj, type) {
+	if (!isObj(obj)) return false;
+	const typeStr = Object.prototype.toString.call(obj);
+	let flag;
+	switch (type) {
+		case "Object":
+			flag = typeStr === "[object Object]";
+			break;
+		case "Array":
+			flag = typeStr === "[object Array]";
+			break;
+		case "Date":
+			flag = typeStr === "[object Date]";
+			break;
+		case "RegExp":
+			flag = typeStr === "[object RegExp]";
+			break;
+		default:
+			flag = false;
+	}
+	return flag;
+}
+
+const getRegExp = re => {
+  let flags = "";
+  if (re.global) flags += "g";
+	if (re.ignoreCase) flags += "i";
+	if (re.multiline) flags += "m";
+	return flags;
+};
+
+function cloneDeep(obj, hash = new WeakMap()) {
+	if (!isObj(obj)) return obj;
+  if (hash.has(obj)) return hash.get(obj);
+
+	let target;
+	//判断对象的类型
+	if (isType(obj, "Object")) {
+		let proto = Object.getPrototypeOf(obj);
+		target = Object.create(proto);
+	} else if (isType(obj, "Array")) {
+		target = [];
+	} else if (isType(obj, "Date")) {
+		target = new Date(obj.getTime());
+	} else if (isType(obj, "RegExp")) {
+		target = new RegExp(obj.source, getRegExp(obj));
+	}
+	hash.set(obj, target);
+	Reflect.ownKeys(obj).forEach(key => {
+		if (isObj(obj[key])) {
+			target[key] = cloneDeep(obj[key], hash);
+		} else {
+			target[key] = obj[key];
+		}
+	});
+	return target;
+}
+```
+

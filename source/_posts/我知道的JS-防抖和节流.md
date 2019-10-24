@@ -23,13 +23,15 @@ input 输入的格式验证
 延迟执行的防抖函数
 
 ```javascript
-var timer = false;
-window.onscroll = function() {
-  clearTimeout(timer);
-  timer = setTimeout(function() {
-    console.log("函数防抖");
-  }, 300);
-};
+function debounce(fn,time){
+  let timer = null
+  return function(...args){
+    clearTimeout(timer)
+    setTimeout(()=>{
+      fn.call(this,...args)
+    },time)
+  }
+}
 ```
 
 ## 节流(throttle)
@@ -39,15 +41,15 @@ window.onscroll = function() {
 适合用于动画相关的场景
 
 ```javascript
-var flag = true;
-window.onscroll = function() {
-  if (!flag) return false;
-  flag = false;
-  setTimeout(function() {
-    console.log("节流" + new Date());
-    flag = true;
-  }, 300);
-};
+function throttle(fn,time){
+  let flag = true
+  return function(...args){
+    if(!flag) return ;
+    flag = false
+    setTimeout(()=>{
+      fn.call(this,...args)
+      flag = true
+    },time)
+  }
+}
 ```
-
-写的不具体，但是我会了 哈哈哈
