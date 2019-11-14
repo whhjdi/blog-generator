@@ -611,29 +611,245 @@ waiting
 
 ## 排序和搜索算法
 
+### 二分查找
+
+```js
+/*
+A:数组
+x: 要查找的值
+返回： x在A中的位置，找不到返回-1
+*/
+function bSearch(A, x){
+  //左边界
+  let l = 0;
+  //右边界
+  let r = A.length - 1;
+  //l,r的中间位置
+  let guess
+  while(l <= r ){
+    guess = Math.floor((l+r)/2);
+    //循环不变式
+    if(A[guess] === x) return guess;
+    else if(A[guess] > x) r = guess-1;
+    else l = guess + 1;
+    //循环不变式
+    //l：新的查找范围左， r:新的查找范围右
+  }
+  return -1
+}
+
+let arr = [1,3,5,7,8,9,123,1234]
+bSearch(arr,5)
+```
+
+### 插入排序
+
+```js
+/*
+A: 已排序的数组
+x: 需要插入的元素
+返回值： 无
+*/
+
+function insert(A,i,x){
+  // p指向下一个需要比较的元素
+  // p+1指向空位
+  let p = i -1
+  while(p>=0 && A[p]>x){
+    A[p+1] = A[p]
+    p--
+  }
+  A[p + 1] = x
+}
+
+function insertion_sort(A,x){
+  for(let i=0;i>A.length;i++){
+    insert(A,i,A[i])
+  }
+
+  
+}
+```
+
+### 冒泡排序
+
+```js
+/*
+A: 需要排序的数组
+返回值： 无
+*/
+function swap(A,i,j){
+  const t= A[i]
+  A[i] = A[j]
+  A[j] = t
+}
+function bubble_sort(A){
+  for(let i = A.length - 1; i>=1; i--){
+    for(let j = 1; i<=i;j++){
+      A[j-1]>a[j] && swap(A,j-1,j)
+    }
+  }
+}
+```
+
+### 归并排序
+
+```js
+/*
+T - O(nlgn)
+S - O(n)
+*/
+/*
+A:数组
+p: 左半边开始
+q: 右半边开始，左半边结束
+r: 右半边结束
+*/
+function merge(A, p , q, r){
+  let A1 = A.slice(p,q)
+  let A2 = A.slice(q,r)
+  A1.push(Number.MAX_SAFE_INTEGER)
+  A2.push(Number.MAX_SAFE_INTEGER)
+  for(let k = p,i=0,j=0;k<r;k++>){
+    A[k] = A1[i]<A[j]?A1[i++]:A2[j++]
+  }
+}
+
+function merge_sort(A,p,r){
+  if(r-p < 2 ) return;
+  const q = Math.ceil((p+r)/2)
+  merge_sort(A,p,q)
+  merge_sort(A,q,r)
+  merge(A,p,q,r )
+}
+```
+
+### 快速排序
+
+```js
+/*
+A:数组
+返回值：无
+*/
+function swap(A,i,j){
+  let t = A[i]
+  A[i] = A[j]
+  A[j] = t
+}
+function partition(A,lo,hi){
+  //小于中心点的范围[lo,i)
+  //未确认的范围 [i,j)
+  //大于中心点的范围[j,hi-1)
+  const pivot = A[hi-1]
+  let i = lo
+  let j = hi-1
+  while(i!==j){
+    if(A[i]<=pivot){
+      i++
+    }else{
+      swap(A,i,--j)
+    }
+  }
+  swap(A,j,hi-1)
+  return j;
+}
+function quick_sort(A,lo=0,hi=A.length){
+  if(hi-lo<=1) return;
+  const p = partition(A,lo,hi)
+  quick_sort(A,lo,p)
+  quick_sort(A,p+1,hi)
+
+}
+```
+
+
+### 计数排序
+
+```javascript
+/*
+A:数组
+返回值： 无
+*/
+
+function counting_sort(A){
+  const max = Math.max(...A)
+  const B = Array(max+1).fill(0)
+  const C = Array(A.length)
+  for(let i = 0;i<A.length;i++){
+    B[A[i]]++
+  }
+  for(let i=1;i<B.length;i++){
+    B[i]+=B[i-1]
+  }
+  for(let i = 0;i<A.length;i++){
+    const p = B[A[i]] -1
+    B[A[i]]--
+    C[p] = A[i]
+  }
+  return C
+}
+```
+
+### 基数排序
+
+```js
+/*
+*/
+function radix_sort(A){
+  const max = Math.max(...A)
+  const buckets = Array.from({length:10},()=>[])
+  let m = 1
+  while(m<max){
+    A.forEach(number=> {
+      const digit = ~~((number%(m*10))/m)
+      buckets[digit].push(number)
+    })
+
+    let j = 0
+    buckets.forEach(bucket=>{
+      while(bucket.length>0){
+        A[j++] = bucket.shift()
+      }
+    })
+    m *= 10
+  }
+}
+```
+
+### 桶排序
+
+```js
+/*
+A:数组
+K:桶的数量
+S:每个桶中的数量
+*/
+function bucket_sort(A,k,s){
+  const buckets = Array.from({length:k},()=>[])
+
+  for(let i=0;i<A.length;i++){
+    const index = ~~(A[i]/s)
+    buckets[index].push(A[i])
+  }
+  for(let i =0;i<buckets.length;i++){
+    insertion_sort(buckets[i])
+  }
+  return [].concat(...buckets)
+}
+```
 ## 算法模式
 
 ## 算法复杂度
 
+> 复杂度是度量**指标**随着输入规模增长关系的一种分类。描述的是随着输入规模增加算法中最大的影响因子
+> 时间复杂度是衡量算法`执行时间`随着`输入规模`增加而增长的关系,是一种对算法的分类
+> 空间复杂度是指算法用了多少额外的时间
+
+> BIG-O的本质是一种渐进趋势的描述
+数学上O(n)是指随着规模增长，算法的执行时间会在 `T=cg(x)`内波动
 
 
-|     符号      |     名称     |
-| :-----------: | :----------: |
-|     O(1)      |    常数的    |
-|   O(log(n))   |     ggg      |
-| O()(log(n))c) | 对数多项式的 |
-|     O(n)      |    线性的    |
-|    O(n**2)    |    二次的    |
-|    O(n**c)    |   多项式的   |
-|    O(c**n)    |    指数的    |
-
-   
-
-
-
-
-
-
+ 
 
 
 
