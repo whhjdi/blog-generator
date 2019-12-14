@@ -25,6 +25,58 @@ DocumentFragment：文档的片段
 
 <!--more-->
 
+
+
+## 操作DOM
+
+```js
+document.getElementById()
+dom.getElementByTagName()
+dom.getElementByClassName()
+dom.querySelector()
+dom.querySelectorAll()
+
+document.documentELement
+doucument.childNodes
+children
+firstChild lastChild
+previousSibing nextSibling
+insertBefore
+
+
+createElement
+createTextNode
+innerHtml innerText
+creatFragmentELement
+element.cloneNode()
+parent.removeChild()
+element.setAttribute('xx',as)
+element.getAttribute('xx')
+element.removeAttribute('xx')
+
+
+element.style.xxx = xxx
+element.className = xxx
+
+
+//获取可视区域的宽高（content+padding）
+client=> top/left width/height
+//（content+padding+border）
+offset=> top/left width/height parent
+//获取页面真实的高度
+scroll=> top/left width/height
+
+document.documentELement.scrollTop=0
+
+window.getComputedStyle(el)
+element.currentStyle
+
+
+
+```
+
+
+
 ## 事件模型
 
 监听函数
